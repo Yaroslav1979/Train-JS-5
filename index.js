@@ -176,12 +176,13 @@ concatenateStrings([1, "two", 3, "four", 5], "two"); // Виведе true
 // За допомогою циклу for-in переберіть масив, додайте до кожного елемента 10.
 // Зберігайте результат в новому масиві. Результат виведіть на консоль.
 function addTenToEach(array) {
-  let resultArray = [];
+  let result = Array(array.length);
 
-  for (const index in array) {const result = array[index] + 10;
-  resultArray.push(result);
+  for (const index in array) {result[index] = array[index] + 10;
+   
+  // resultArray.push(result);
 }
-console.log(resultArray)
+console.log(result)
   // Ініціалізуємо масив через конструктор з такою же кількістю елементів як в вхідному масиві для зберігання результату
   // Перебираємо масив за допомогою циклу for-in
   // Додаємо до поточного елемента 10 та додаємо результат в новий масив
@@ -228,7 +229,7 @@ function getEvenNumbers(arr) {
     for (let i = 0; i < arr.length; i++) {
       const number = arr[i];  
       if (number % 2 === 0) {
-        evenNumbers.push(number);
+       evenNumbers[evenNumbers.length] = number;
       }
     }  
     return evenNumbers; 
@@ -247,7 +248,7 @@ function multiplyByIndex(arr) {
   for (let i = 0; i < arr.length; i++) {
     const number = arr[i] * i;  
      {
-      evenNumbers.push(number);
+      evenNumbers[evenNumbers.length] = number;
     }
   }  
   return evenNumbers; 
@@ -265,10 +266,10 @@ function replaceNumbers(arr) {
   for (let i = 0; i < arr.length; i++) {
     const number = arr[i];  
     if (number > 10) {
-      evenNumbers.push("Greater than 10");
+      evenNumbers[evenNumbers.length]="Greater than 10";
     }
     if (number <= 10) {
-      evenNumbers.push("Less than or equal to 10");
+      evenNumbers[evenNumbers.length]="Less than or equal to 10";
     }
   }  
   return evenNumbers; 
